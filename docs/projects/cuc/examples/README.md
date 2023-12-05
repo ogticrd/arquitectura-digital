@@ -1,3 +1,1 @@
-# Cuenta Única Ciudadana
-
-## Ejemplos prácticos
+# Cuenta Única Ciudadana: ejemplos prácticos
