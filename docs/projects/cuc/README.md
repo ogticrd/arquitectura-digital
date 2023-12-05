@@ -25,6 +25,7 @@ La CUC se utiliza para acceder a servicios gubernamentales, como la presentació
   - [Tecnologías](#tecnologías)
   - [Guía de integración](./docs/integration.md)
   - [Ejemplos](./examples/README.md)
+  - [Repositorios](#repositorios)
 
 ## Descripción del proyecto
 
@@ -49,3 +50,17 @@ La implementación exitosa de la Cuenta Única Ciudadana (CUC) en la República 
 **Criptografía Asimétrica**: esencial para garantizar la seguridad de las comunicaciones y la protección de la información sensible. El Departamento de Arquitectura Digital aplica su experiencia en la implementación y gestión de claves criptográficas para salvaguardar la integridad de la CUC.
 
 **APIs (Interfaz de Programación de Aplicaciones)**: Las APIs son la columna vertebral que permite la interoperabilidad entre la CUC y los diversos servicios gubernamentales y privados. La experiencia del departamento en diseño y gestión de APIs asegura una integración eficiente y segura.
+
+## Repositorios
+
+> Lista organizada de los repositorios de CUC.
+
+- [cuenta-unica-registry](https://github.com/ogticrd/cuenta-unica-registry)
+  <img align="right" src="https://img.shields.io/github/stars/ogticrd/cuenta-unica-registry?label=%E2%AD%90%EF%B8%8F&logo=github" alt="GitHub stars">
+  <img align="right" src="https://img.shields.io/github/issues/ogticrd/cuenta-unica-registry" alt="GitHub issues">\
+  Portal de registro de la cuenta única ciudadana.
+
+- [cuenta-unica-landing](https://github.com/ogticrd/cuenta-unica-landing)
+  <img align="right" src="https://img.shields.io/github/stars/ogticrd/cuenta-unica-landing?label=%E2%AD%90%EF%B8%8F&logo=github" alt="GitHub stars">
+  <img align="right" src="https://img.shields.io/github/issues/ogticrd/cuenta-unica-landing" alt="GitHub issues">\
+  Portal informativo del registro de cuenta única ciudadana.
