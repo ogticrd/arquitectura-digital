@@ -9,7 +9,6 @@ Guía simplificada de integración con CUC para instituciones.
 - [Introducción](#introducción)
   - [OAuth: La Llave Maestra de la Autorización](#oauth-la-llave-maestra-de-la-autorización)
   - [OpenID Connect: La Identidad Verificada en Acción](#openid-connect-la-identidad-verificada-en-acción)
-  - [ORY Network: La Red que Enlaza Todo](#ory-network-la-red-que-enlaza-todo)
   - [Importancia](#importancia)
 - [Solicitud de cliente OAuth](#solicitud-cliente-oauth)
 - [Integración desde cero](#integración-desde-cero)
@@ -18,7 +17,7 @@ Guía simplificada de integración con CUC para instituciones.
 
 ## Introducción
 
-¡Bienvenidos a la emocionante travesía de integrar tu sistema con la Cuenta Única Ciudadana (CUC) en la República Dominicana! En esta guía, te llevaremos de la mano a través de los pasos clave para lograr una integración exitosa. Pero antes de sumergirnos en los detalles, es esencial comprender los protagonistas principales de esta historia tecnológica: OAuth, OpenID Connect y ORY Network.
+¡Bienvenidos a la emocionante travesía de integrar tu sistema con la Cuenta Única Ciudadana (CUC) en la República Dominicana! En esta guía, te llevaremos de la mano a través de los pasos clave para lograr una integración exitosa. Pero antes de sumergirnos en los detalles, es esencial comprender los protagonistas principales de esta historia tecnológica: OAuth y OpenID Connect.
 
 ### OAuth: La llave maestra de la autorización
 
@@ -28,15 +27,11 @@ Imagine que OAuth es como la llave maestra que permite a tu sistema acceder de m
 
 Ahora, imagina que OpenID Connect es el guardián de la identidad. No solo abre la puerta, sino que también verifica la identidad de quienes entran. Es como la credencial que asegura que los usuarios son quienes dicen ser. Gracias a OpenID Connect, tu sistema puede obtener información de identidad verificada de manera segura desde la CUC.
 
-### ORY Network: La red que enlaza todo
-
-Finalmente, entra en escena ORY Network, el tejido que conecta todos los elementos. ORY Network es como el coordinador detrás de escena que asegura que OAuth y OpenID Connect trabajen juntos sin problemas. Es el director de la orquesta que garantiza una integración armoniosa, permitiendo que tu sistema y la CUC se comuniquen de manera eficiente y segura.
-
 ### Importancia
 
-Ahora, ¿por qué son tan importantes estos actores en nuestra guía de integración? La respuesta es simple y poderosa: aseguran la seguridad, eficiencia y confiabilidad de todo el proceso. OAuth garantiza que solo las personas autorizadas accedan a la CUC. OpenID Connect verifica la identidad de manera robusta. Y ORY Network facilita la conexión entre todos, asegurando que la integración sea como una danza perfectamente coordinada.
+Ahora, ¿por qué son tan importantes estos actores en nuestra guía de integración? La respuesta es simple y poderosa: aseguran la seguridad, eficiencia y confiabilidad de todo el proceso. OAuth garantiza que solo las personas autorizadas accedan a la CUC. OpenID Connect verifica la identidad de manera robusta.
 
-Así que, mientras avanzamos en esta guía, recuerda que OAuth, OpenID Connect y ORY Network son tus aliados en esta aventura. Juntos, hacen posible que tu sistema y la Cuenta Única Ciudadana trabajen en armonía, allanando el camino hacia una experiencia digital segura, eficiente y confiable para todos. ¡Vamos a sumergirnos en el fascinante mundo de la integración!
+Así que, mientras avanzamos en esta guía, recuerda que OAuth y OpenID Connect son tus aliados en esta aventura. Juntos, hacen posible que tu sistema y la Cuenta Única Ciudadana trabajen en armonía, allanando el camino hacia una experiencia digital segura, eficiente y confiable para todos. ¡Vamos a sumergirnos en el fascinante mundo de la integración!
 
 ## Solicitud cliente OAuth
 
