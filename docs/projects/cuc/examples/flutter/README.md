@@ -1,16 +1,32 @@
-# flutter_oauth
+This is a new [**Flutter**](https://flutter.dev/) project
 
-A new Flutter project.
+# Getting Started
 
-## Getting Started
+>**Note**: Make sure you have [Flutter correctly installed](https://docs.flutter.dev/get-started/install) before trying this trying this tutorial
 
-This project is a starting point for a Flutter application.
+## Starting the Application
 
-A few resources to get you started if this is your first Flutter project:
+After installing the package dependencies with 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+flutter pub get
+```
+
+run the application
+
+```
+flutter pub get
+```
+
+# Troubleshooting
+
+If you can't get this to work, see the [Common Flutter errors](https://docs.flutter.dev/testing/common-errors) page.
+
+# Learn More
+
+To learn more about Flutter, take a look at the following resources:
+
+- [Flutter Website](https://flutter.dev/) - learn more about Flutter.
+- [Getting Started](https://docs.flutter.dev/get-started/install) - an **overview** of Flutter and how setup your environment.
+- [`@flutter/flutter`](https://github.com/flutter/flutter) - the Open Source; GitHub **repository** for Flutter.
