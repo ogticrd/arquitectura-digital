@@ -1,46 +1,46 @@
-This is a new [**Flutter**](https://flutter.dev/) project with a basic Oauth implemented
+Este es un nuevo proyecto de [**Flutter**](https://flutter.dev/) con un OAuth básico implementado.
 
-# Getting Started
+# Empezando
 
->**Note**: Make sure you have [Flutter correctly installed](https://docs.flutter.dev/get-started/install) before trying this trying this tutorial
+> **Nota:** Asegúrate de tener [Flutter correctamente instalado](https://docs.flutter.dev/get-started/install) antes de intentar este tutorial.
 
-## Setting up the needed permissions
+## Configuración de los permisos necesarios
 
-This is an overview of the permissions that are needed for the Oauth process to work. Everything in this section is already done in the example and it is here in case someone wants to implemented in an already developed flutter application
+Esta es una descripción general de los permisos que se necesitan para que funcione el proceso de OAuth. Todo en esta sección ya está hecho en el ejemplo y está aquí en caso de que alguien quiera implementarlo en una aplicación Flutter ya desarrollada.
 
-### Modidy iOs configuration
+### Modificar la configuración de iOS
 
-- Open your project's Info.plist file.
+- Abre el archivo `Info.plist` de tu proyecto.
 
-- Add a new key called "CFBundle URLTypes" of type Array.
+- Agrega una nueva clave llamada "CFBundle URLTypes" de tipo Array.
 
-- Add a ner item under "CFBundleURLTypes" and set the URL Scheme (CFBundleURLSchemes) to desired scheme, e.g., "myapp"
+- Agrega un nuevo elemento bajo "CFBundleURLTypes" y establece el Esquema de URL (CFBundleURLSchemes) al esquema deseado, por ejemplo, "miaplicacion".
 
-- Save the cahnges
+- Guarda los cambios.
 
-```
+```xml
 <key>CFBundleURLTypes</key>
 <array>
   <dict>
     <key>CFBundleURLSchemes</key>
     <array>
-      <string>myapp</string> <!-- Replace "myapp" with your desired scheme -->
+      <string>miaplicacion</string> <!-- Reemplaza "miaplicacion" con el esquema deseado -->
     </array>
   </dict>
 </array>
 ```
 
-### Configure the Android manifest (AndroidManifest.xml)
+### Configurar el manifiesto de Android (AndroidManifest.xml)
 
-- Open the `AndroidManifest.xml` file located in the `android/app/src/main` directory.
+- Abre el archivo `AndroidManifest.xml` ubicado en el directorio `android/app/src/main`.
 
-- Add an intent filter within the `<activity>` tag.
+- Agrega un filtro de intención dentro de la etiqueta `<activity>`.
 
-- Set the `android:scheme` attribute to your desired scheme, e.g., "myapp".
+- Establece el atributo `android:scheme` en tu esquema deseado, por ejemplo, "miaplicacion".
 
-- Save the changes.
+- Guarda los cambios.
 
-```
+```xml
 <activity>
   ...
   <intent-filter>
@@ -48,34 +48,33 @@ This is an overview of the permissions that are needed for the Oauth process to 
     <category android:name="android.intent.category.DEFAULT" />
     <category android:name="android.intent.category.BROWSABLE" />
     <data
-        android:scheme="myapp" /> <!-- Replace "myapp" with your desired scheme -->
+        android:scheme="miaplicacion" /> <!-- Reemplaza "miaplicacion" con el esquema deseado -->
   </intent-filter>
 </activity>
 ```
 
-## Starting the Application
+## Iniciando la aplicación
 
-After installing the package dependencies with 
-
+Después de instalar las dependencias del paquete con:
 
 ```
 flutter pub get
 ```
 
-run the application
+Ejecuta la aplicación con el siguiente comando:
 
 ```
 flutter run
 ```
 
-# Troubleshooting
+# Solución de problemas
 
-If you can't get this to work, see the [Common Flutter errors](https://docs.flutter.dev/testing/common-errors) page.
+Si no puedes hacer que esto funcione, consulta la página de [Errores comunes de Flutter](https://docs.flutter.dev/testing/common-errors).
 
-# Learn More
+# Aprende más
 
-To learn more about Flutter, take a look at the following resources:
+Para aprender más sobre Flutter, echa un vistazo a los siguientes recursos:
 
-- [Flutter Website](https://flutter.dev/) - learn more about Flutter.
-- [Getting Started](https://docs.flutter.dev/get-started/install) - an **overview** of Flutter and how setup your environment.
-- [`@flutter/flutter`](https://github.com/flutter/flutter) - the Open Source; GitHub **repository** for Flutter.
+- [Sitio web de Flutter](https://flutter.dev/) - aprende más sobre Flutter.
+- [Empezando](https://docs.flutter.dev/get-started/install) - una **descripción general** de Flutter y cómo configurar tu entorno.
+- [`@flutter/flutter`](https://github.com/flutter/flutter) - el repositorio de GitHub **de código abierto** para Flutter.
