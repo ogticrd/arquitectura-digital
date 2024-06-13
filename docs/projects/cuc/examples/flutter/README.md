@@ -67,6 +67,8 @@ Ejecuta la aplicación con el siguiente comando:
 flutter run
 ```
 
+![Flutter Demo](flutter-demo.png)
+
 # Solución de problemas
 
 Si no puedes hacer que esto funcione, consulta la página de [Errores comunes de Flutter](https://docs.flutter.dev/testing/common-errors).
