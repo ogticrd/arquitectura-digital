@@ -1,20 +1,23 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:developer';
+import 'dart:io';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 import 'package:app_links/app_links.dart';
 import 'package:flutter/material.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 final authorizationEndpoint =
     Uri.parse('https://cuenta.digital.gob.do/oauth2/auth');
 final tokenEndpoint = Uri.parse('https://cuenta.digital.gob.do/oauth2/token');
-final identifier = 'client_id';
-final secret = 'client_secret';
-final redirectUrl = Uri.parse('redirect_url');
+final identifier = dotenv.env['CLIENT_ID']!;
+final secret = dotenv.env['CLIENT_SECRET'];
+final redirectUrl = Uri.parse(dotenv.env['REDIRECT_URL']!);
 
 Future<oauth2.Client> createClient() async {
-
   // If we don't have OAuth2 credentials yet, we need to get the resource owner
   // to authorize us. We're assuming here that we're a command-line application.
   var grant = oauth2.AuthorizationCodeGrant(
@@ -31,11 +34,12 @@ Future<oauth2.Client> createClient() async {
   // owner has authorized, they'll be redirected to `redirectUrl` with an
   // authorization code. The `redirect` should cause the browser to redirect to
   // another URL which should also have a listener.
-
+  //
+  // `redirect` and `listen` are not shown implemented here. See below for the
+  // details.
   await redirect(authorizationUrl);
   var responseUrl = await listen(redirectUrl);
 
-  
   // Once the user is redirected to `redirectUrl`, pass the query parameters to
   // the AuthorizationCodeGrant. It will validate them and extract the
   // authorization code to create a new Client.
@@ -59,7 +63,8 @@ Future<void> redirect(Uri url) async {
   }
 }
 
-void main() {
+Future main() async {
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -82,40 +87,59 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('OAuth Demo'),
-        ),
         body: Center(
-          child: Column(
-            children: [
-              const Text('Implementar Autenticación'),
-              ElevatedButton(
-                  onPressed: () async {
-                    var client = await createClient();
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset("img/logo-cuenta-unica.svg"),
+                SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  'Prueba iniciar sesión con tu Cuenta Única, presionando el botón de abajo',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFF003876),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                FilledButton(
+                    child: const Text("Iniciar sesión"),
+                    onPressed: () async {
+                      var client = await createClient();
+                      inspect(client);
+                      inspect(client.credentials);
 
-                    var headers = {
-                      'Authorization': 'Bearer ${client.credentials.accessToken}',
-                    };
-                    //Get user info by doing an HTTP GET request
-                    final response = await http.get(Uri.parse('https://cuenta.digital.gob.do/userinfo'),
-                        headers: headers);
+                      var headers = {
+                        'Authorization':
+                            'Bearer ${client.credentials.accessToken}',
+                      };
 
-                    if (response.statusCode == 200) {
-                      //Print the response in case it was succesfully retrieved
-                      print(response.body);
-                      setState(() {
-                        name = jsonDecode(response.body)["given_name"];
-                      });
-                    }
-                    else {
-                      //Print the reason phrase in case the request failed
-                      print(response.reasonPhrase);
-                    }
+                      final response = await http.get(
+                          Uri.parse('https://cuenta.digital.gob.do/userinfo'),
+                          headers: headers);
 
-                  },
-                  child: const Text("Iniciar sesión con Cuenta Única")),
-                  Text(name)
-            ],
+                      if (response.statusCode == 200) {
+                        print(response.body);
+                        setState(() {
+                          name = jsonDecode(response.body)["given_name"];
+                        });
+                      } else {
+                        print(response.reasonPhrase);
+                      }
+                    },
+                    style: FilledButton.styleFrom(
+                        backgroundColor: Color(0xFF003876))),
+                Text(name)
+              ],
+            ),
           ),
         ),
       ),
